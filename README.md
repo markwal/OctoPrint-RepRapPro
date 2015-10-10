@@ -1,6 +1,7 @@
 # OctoPrint-RepRapPro
 
-**TODO:** Describe what your plugin does.
+Customizes OctoPrint to work with the [dc42](https://github.com/dc42/RepRapFirmware)
+fork of the RepRapPro firmware
 
 ## Setup
 
@@ -9,9 +10,6 @@ or manually using this URL:
 
     https://github.com/markwal/OctoPrint-RepRapPro/archive/master.zip
 
-**TODO:** Describe how to install your plugin, if more needs to be done than just installing it via pip or through
-the plugin manager.
-
 ## Configuration
 
-**TODO:** Describe your plugin's configuration options (if any).
+Currently no configuration is necessary to use the plugin
