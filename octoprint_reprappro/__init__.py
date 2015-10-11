@@ -2,10 +2,11 @@
 from __future__ import absolute_import
 
 import octoprint.plugin
+from octoprint.events import eventManager, Events
 
 class RepRapProPlugin(octoprint.plugin.StartupPlugin):
 	def _gcode_queuing(self, comm, phase, cmd, cmd_type, gcode, *args, **kwargs):
-		if gcode is "M0" or gcode is "M1":
+		if gcode == "M0" or gcode == "M1":
 			eventManager().fire(Events.WAITING)
 			comm._enqueue_for_sending(cmd, command_type=cmd_type)
 			return None, # suppress further processing
@@ -21,6 +22,6 @@ def __plugin_load__():
 
 	global __plugin_hooks__
 	__plugin_hooks__ = {
-		"octoprint.comm.protocol.gcode.queuing": plugin._gcode_queuing,
+		"octoprint.comm.protocol.gcode.queuing": plugin._gcode_queuing
 	}
 
